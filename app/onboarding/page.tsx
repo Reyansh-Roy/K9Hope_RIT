@@ -7,7 +7,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebaseConfig";
 import DonorOnboarding from "@/components/onb-forms/donorOnb";
 import PatientOnboarding from "@/components/onb-forms/patientOnb";
-import OnboardingHos from "@/components/onb-forms/hospitalOnb";
+import VeterinaryOnboarding from "@/components/onb-forms/veterinaryOnb";
 import OrganisationOnboarding from "@/components/onb-forms/organisationOnb";
 import HeartLoading from "@/components/custom/HeartLoading";
 
@@ -47,16 +47,16 @@ const OnboardingPage = () => {
       // Load appropriate onboarding form
       switch (role) {
         case "patient":
-          setContent(<PatientOnboarding />);
+          setContent(<PatientOnboarding onComplete={handleOnboardingComplete} />);
           break;
         case "donor":
-          setContent(<DonorOnboarding />);
+          setContent(<DonorOnboarding onComplete={handleOnboardingComplete} />);
           break;
-        case "hospital":
-          setContent(<OnboardingHos />);
+        case "veterinary":
+          setContent(<VeterinaryOnboarding onComplete={handleOnboardingComplete} />);
           break;
         case "organisation":
-          setContent(<OrganisationOnboarding />);
+          setContent(<OrganisationOnboarding onComplete={handleOnboardingComplete} />);
           break;
         default:
           router.push("/login");
