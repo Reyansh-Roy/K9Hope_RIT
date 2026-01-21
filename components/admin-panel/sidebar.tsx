@@ -6,6 +6,7 @@ import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Sidebar() {
   const sidebar = useStore(useSidebar, (x) => x);
@@ -34,22 +35,14 @@ export function Sidebar() {
           asChild
         >
           <Link href="#" className="flex items-center gap-2 flex-nowrap">
-            <div className="flex items-center space-x-2 pr-4">
-              <img
-                src="/donor-sync-icon-rounder.svg"
-                className="h-11 w-11 min-w-[44px] min-h-[44px] flex-shrink-0"
-                alt="K9Hope Icon"
+            <div className="flex items-center pr-4">
+              <Image
+                src="/k9hope_ritchennai.svg"
+                width={160}
+                height={40}
+                alt="RIT Chennai K9Hope"
+                className="flex-shrink-0 object-contain"
               />
-              <h1
-                className={cn(
-                  "font-bold text-xl transition-all duration-300 ease-in-out",
-                  !getOpenState()
-                    ? "translate-x-0 opacity-0"
-                    : "translate-x-0 opacity-100"
-                )}
-              >
-                K9Hope
-              </h1>
             </div>
           </Link>
         </Button>

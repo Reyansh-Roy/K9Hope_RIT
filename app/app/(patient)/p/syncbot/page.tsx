@@ -72,7 +72,7 @@ export default function K9BuddyAI() {
               key={index}
               className={`p-3 my-2 rounded-lg text-sm shadow-md border ${msg.sender === "user"
                   ? "ml-auto bg-blue-600 text-white mr-2 text-left border-blue-700" // user messages aligned to left with gap on right
-                  : "mr-auto bg-gray-50 dark:bg-gray-100 text-gray-800 dark:text-gray-200 ml-2 text-left border-gray-200 dark:border-gray-600" // bot messages aligned to right with gap on left
+                  : "mr-auto bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 ml-2 text-left border-gray-200 dark:border-slate-600" // bot messages aligned to right with gap on left
                 } ${device === "desktop" ? "max-w-[30%]" : "max-w-[80%]"}`}
             >
               <ReactMarkdown>{msg.text}</ReactMarkdown>
@@ -91,7 +91,7 @@ export default function K9BuddyAI() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyPress}
             placeholder="Ask about canine blood donation or Jillu's clinical status..."
-            className="flex-1 bg-white dark:bg-gray-50 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600"
+            className="flex-1 bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-gray-300 dark:border-slate-600"
           />
           <Button onClick={sendMessage} disabled={loading} className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white">
             {loading ? <Loader2 className="animate-spin" /> : "Send"}

@@ -15,13 +15,13 @@ export default function GreetingCard({ name = defaultName, role = defaultRole, c
 
     if (hour < 12) {
       setGreeting("☀️ Good Morning");
-      setBgClass("bg-gradient-to-r from-yellow-400 to-orange-400");
+      setBgClass("bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800");
     } else if (hour < 18) {
       setGreeting("🌤️ Good Afternoon");
-      setBgClass("bg-gradient-to-r from-blue-400 to-blue-600");
+      setBgClass("bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800");
     } else {
       setGreeting("🌙 Good Evening");
-      setBgClass("bg-gradient-to-r from-purple-600 to-indigo-800");
+      setBgClass("bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800");
     }
   }, []);
 
@@ -38,17 +38,17 @@ export default function GreetingCard({ name = defaultName, role = defaultRole, c
 
   return (
     <div className="pb-10">
-      <Card className={`text-foreground ${bgClass} transition-all duration-500 shadow-lg`}>
+      <Card className={`text-foreground bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 shadow-lg`}>
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">
+          <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white">
             {displayGreeting}
           </CardTitle>
-          <CardDescription className="text-lg text-foreground">
+          <CardDescription className="text-lg text-slate-600 dark:text-slate-300">
             {roleMessages[role] || "Welcome to the Blood Bank Platform."}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="italic text-foreground">Let's make a difference today</p>
+          <p className="italic text-slate-600 dark:text-slate-300">Let's make a difference today</p>
         </CardContent>
       </Card>
     </div>
