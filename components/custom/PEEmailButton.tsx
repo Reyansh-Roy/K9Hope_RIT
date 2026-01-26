@@ -58,7 +58,7 @@ const PEEmailButton: React.FC<PEEmailButtonProps> = ({ onVerify }) => {
     <div
       suppressHydrationWarning
       className="pe_verify_email"
-      data-client-id="13006232029048972233"
+      data-client-id={process.env.NEXT_PUBLIC_PHONE_EMAIL_CLIENT_ID}
     ></div>
   );
 };

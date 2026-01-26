@@ -54,7 +54,7 @@ const PEPhoneButton: React.FC<PEPhoneButtonProps> = ({ onVerify }) => {
 
   return (
     <div suppressHydrationWarning className="pe_signin_button"
-      data-client-id="13006232029048972233"
+      data-client-id={process.env.NEXT_PUBLIC_PHONE_EMAIL_CLIENT_ID}
     ></div>
   );
 };

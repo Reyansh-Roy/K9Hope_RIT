@@ -10,6 +10,7 @@ import {
   SheetTrigger,
   SheetTitle
 } from "@/components/ui/sheet";
+import Image from "next/image";
 
 export function SheetMenu() {
   return (
@@ -26,14 +27,14 @@ export function SheetMenu() {
             variant="link"
             asChild
           >
-            <Link href="#" className="flex items-center gap-2 ">
-              <img
-                src="/donor-sync-icon-rounder.svg"
-                className="h-11 w-11 min-w-[44px] min-h-[44px] flex-shrink-0"
-                alt="K9Hope Icon"
+            <Link href="#" className="flex items-center gap-2">
+              <Image
+                src="/k9hope_ritchennai.svg"
+                width={120}
+                height={30}
+                alt="RIT Chennai K9Hope"
+                className="flex-shrink-0 object-contain"
               />
-
-              <SheetTitle className="font-bold text-lg pr-4">K9Hope</SheetTitle>
             </Link>
           </Button>
         </SheetHeader>

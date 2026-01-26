@@ -185,8 +185,15 @@ export async function POST(req: NextRequest) {
     }
 
     // Check API key availability (case-sensitive)
-    const apiKey = process.env.GEMINI_API_KEY || "AIzaSyAQt-rixM9UdxDQJgyEOzWH-Hq9bzqAN_A";
+    const apiKey = process.env.GEMINI_API_KEY;
     console.log("CRITICAL: API KEY STATUS:", !!apiKey);
+    
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "Clinical Assistant is offline. Please check RIT server configuration." },
+        { status: 503 }
+      );
+    }
 
     // Initialize Gemini per request (forces env read on every request)
     const genAI = new GoogleGenerativeAI(apiKey);
